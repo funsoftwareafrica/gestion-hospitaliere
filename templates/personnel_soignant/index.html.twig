@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste du personnel soignant{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Liste du personnel soignant</h1>
+
+        <a href="{{ path('personnel_soignant_new') }}" class="btn btn-primary mb-3">Ajouter un personnel soignant</a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Spécialité</th>
+                    <th>Téléphone</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for personnelSoignant in personnelSoignants %}
+                    <tr>
+                        <td>{{ personnelSoignant.nom }}</td>
+                        <td>{{ personnelSoignant.prenom }}</td>
+                        <td>{{ personnelSoignant.specialite }}</td>
+                        <td>{{ personnelSoignant.telephone }}</td>
+                        <td>{{ personnelSoignant.email }}</td>
+                        <td>
+                            <a href="#">Voir</a>
+                            <a href="#">Modifier</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

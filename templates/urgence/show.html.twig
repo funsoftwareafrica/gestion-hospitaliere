@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('urgence_delete', {'id': urgence.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette urgence ?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ urgence.id) }}">
+    <button class="btn">Supprimer</button>
+</form>

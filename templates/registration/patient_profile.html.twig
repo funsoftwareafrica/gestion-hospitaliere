@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil du patient{% endblock %}
+
+{% block body %}
+    <h1>Profil du patient</h1>
+
+    <p>Nom : {{ patient.nom }}</p>
+    <p>Prénom : {{ patient.prenom }}</p>
+    <p>Email : {{ patient.email }}</p>
+    {# ... affichez les autres informations du patient ... #}
+
+    <a href="{{ path('app_home') }}">Retour à l'accueil</a>
+{% endblock %}

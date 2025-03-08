@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>Bienvenue ! ✅</h1>
+
+        <p>Cette page a été générée par :</p>
+
+        <ul>
+            <li>Votre contrôleur : <code>{{ controller_path }}</code></li>
+            <li>Votre template : <code>{{ template_path }}</code></li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="display-4">Bienvenue dans notre application de gestion hospitalière</h1>
+            <p class="lead">Cette application vous permet de gérer les patients, le personnel soignant et les urgences.</p>
+            <hr class="my-4">
+            <p>Accédez aux différentes fonctionnalités en utilisant les liens ci-dessous.</p>
+            <a class="btn btn-primary btn-lg" href="{{ path('patient_index') }}" role="button">Gestion des patients</a>
+            <a class="btn btn-success btn-lg" href="{{ path('personnel_soignant_index') }}" role="button">Gestion du personnel soignant</a>
+            <a class="btn btn-danger btn-lg" href="{{ path('urgence_index') }}" role="button">Gestion des urgences</a>
+        </div>
+    </div>
+{% endblock %}

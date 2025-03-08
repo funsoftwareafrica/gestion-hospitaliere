@@ -1,0 +1,45 @@
+
+body {
+    background-image: url('/images/votre-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+.form-container {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+h2.section-title {
+    margin-bottom: 20px;
+    color: black;
+}
+
+
+.patient-list h2.section-title {
+    color: #007bff;
+}
+
+.patient-form {
+    background-color: rgba(248, 249, 250, 0.8);
+}
+
+.personnel-list h2.section-title {
+    color: #28a745;
+}
+
+.personnel-form {
+    background-color: rgba(233, 236, 239, 0.8);
+}
+
+
+.patientsoignant-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+}

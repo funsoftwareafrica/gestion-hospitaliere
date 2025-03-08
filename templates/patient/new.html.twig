@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau patient{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Nouveau patient</h1>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        {{ form_end(form) }}
+
+        <a class="btn btn-primary btn-lg mt-3" href="{{ path('patient_index') }}" role="button">Gestion des patients</a>
+    </div>
+{% endblock %}

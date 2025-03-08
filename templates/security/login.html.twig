@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="display-4">Bienvenue dans notre application de gestion hospitalière</h1>
+            <p class="lead">Cette application vous permet de gérer les patients, le personnel soignant et les urgences.</p>
+            <hr class="my-4">
+            <p>Accédez aux différentes fonctionnalités en utilisant les liens ci-dessous.</p>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h2>Gestion</h2>
+                    <a class="btn btn-primary btn-lg mb-2 w-100" href="{{ path('patient_index') }}" role="button">Gestion des patients</a>
+                    <a class="btn btn-success btn-lg mb-2 w-100" href="{{ path('personnel_soignant_index') }}" role="button">Gestion du personnel soignant</a>
+                    <a class="btn btn-danger btn-lg mb-2 w-100" href="{{ path('urgence_index') }}" role="button">Gestion des urgences</a>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <h2>Authentification</h2>
+                    <a class="btn btn-info btn-lg mb-2 w-100" href="{{ path('app_register_patient') }}" role="button">Inscription Patient</a>
+                    <a class="btn btn-info btn-lg mb-2 w-100" href="{{ path('app_register_personnel') }}" role="button">Inscription Personnel Soignant</a>
+                    <a class="btn btn-secondary btn-lg mb-2 w-100" href="{{ path('app_login') }}" role="button">Se connecter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

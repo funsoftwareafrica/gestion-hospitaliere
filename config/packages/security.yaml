@@ -1,0 +1,45 @@
+security:
+    password_hashers:
+        App\Entity\Patient: 'auto'
+        App\Entity\PersonnelSoignant: 'auto'
+    providers:
+        patient_provider:
+            entity:
+                class: App\Entity\Patient
+                property: email
+        personnel_soignant_provider:
+            entity:
+                class: App\Entity\PersonnelSoignant
+                property: email
+        main_provider:
+            chain:
+                providers: [patient_provider, personnel_soignant_provider]
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            lazy: true
+            provider: main_provider
+            form_login:
+                login_path: app_login
+                check_path: app_login
+            logout:
+                path: app_logout
+            switch_user: true
+    access_control:
+        - { path: ^/patient/, roles: ROLE_PATIENT }
+        - { path: ^/personnel/, roles: ROLE_PERSONNEL_SOIGNANT }
+        - { path: ^/login$, roles: PUBLIC_ACCESS }
+        - { path: ^/register$, roles: PUBLIC_ACCESS }
+        - { path: ^/, roles: PUBLIC_ACCESS }
+
+when@test:
+    security:
+        password_hashers:
+            App\Entity\Patient:
+                algorithm: bcrypt
+                cost: 4
+            App\Entity\PersonnelSoignant:
+                algorithm: bcrypt
+                cost: 4
